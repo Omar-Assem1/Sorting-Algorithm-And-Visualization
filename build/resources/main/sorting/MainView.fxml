@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sorting.MainController"
+            styleClass="root-pane">
+    <top>
+        <VBox styleClass="header">
+            <Label text="Sorting Algorithm Analyser" styleClass="title-label"/>
+            <Label text="Compare performance and visualise sorting step by step" styleClass="subtitle-label"/>
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" styleClass="main-tabs">
+            <tabs>
+                <Tab text="📊  Sorting Comparison">
+                    <fx:include source="ComparisonView.fxml"/>
+                </Tab>
+                <Tab text="🎬  Single Visualisation">
+                    <fx:include source="VisualizationView.fxml"/>
+                </Tab>
+                <Tab text="🎬  Multi Visualisation">
+                    <fx:include source="MultiVisualizationView.fxml"/>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

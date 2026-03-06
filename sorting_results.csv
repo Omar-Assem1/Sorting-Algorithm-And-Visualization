@@ -1,0 +1,19 @@
+Algorithm,Array Size,Array Type,Runs,Avg (ms),Min (ms),Max (ms),Comparisons,Interchanges
+Selection Sort,1000,large_random_1000.txt,3,4.9086,0.2672,7.5029,499500,989
+Insertion Sort,1000,large_random_1000.txt,3,1.8184,1.0011,3.4214,261785,260793
+Bubble Sort,1000,large_random_1000.txt,3,3.2174,0.9421,5.6143,498972,260793
+Merge Sort,1000,large_random_1000.txt,3,0.3056,0.1040,0.6485,8730,4275
+Heap Sort,1000,large_random_1000.txt,3,0.2443,0.1788,0.3723,16859,9080
+Quick Sort,1000,large_random_1000.txt,3,0.2651,0.1100,0.4780,11319,6645
+Selection Sort,100,random_100.txt,3,0.0047,0.0028,0.0070,4950,93
+Insertion Sort,100,random_100.txt,3,0.0933,0.0881,0.1036,2437,2340
+Bubble Sort,100,random_100.txt,3,0.0087,0.0046,0.0143,4779,2340
+Merge Sort,100,random_100.txt,3,0.0068,0.0051,0.0093,559,277
+Heap Sort,100,random_100.txt,3,0.0131,0.0116,0.0147,1029,592
+Quick Sort,100,random_100.txt,3,0.0052,0.0043,0.0067,701,436
+Selection Sort,20,small_random_20.txt,3,0.0005,0.0002,0.0009,190,19
+Insertion Sort,20,small_random_20.txt,3,0.0054,0.0052,0.0058,131,113
+Bubble Sort,20,small_random_20.txt,3,0.0006,0.0003,0.0011,190,113
+Merge Sort,20,small_random_20.txt,3,0.0014,0.0008,0.0017,64,32
+Heap Sort,20,small_random_20.txt,3,0.0021,0.0017,0.0024,116,71
+Quick Sort,20,small_random_20.txt,3,0.0009,0.0007,0.0012,93,42

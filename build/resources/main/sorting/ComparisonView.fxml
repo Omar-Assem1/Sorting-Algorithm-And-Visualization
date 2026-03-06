@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sorting.ComparisonController"
+            styleClass="tab-content">
+
+    <top>
+        <VBox styleClass="controls-box" spacing="8">
+            <HBox spacing="12" styleClass="control-row">
+                <Label text="Array Size:" styleClass="ctrl-label"/>
+                <Spinner fx:id="spnSize" editable="true" prefWidth="90"/>
+
+                <Label text="Runs:" styleClass="ctrl-label"/>
+                <Spinner fx:id="spnRuns" editable="true" prefWidth="70"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <Label text="Array Types:" styleClass="ctrl-label"/>
+                <CheckBox fx:id="chkRandom"  text="Random"           selected="true"/>
+                <CheckBox fx:id="chkSorted"  text="Sorted"           selected="true"/>
+                <CheckBox fx:id="chkInverse" text="Inversely Sorted" selected="true"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <Button fx:id="btnRun"    text="▶  Run Comparison" onAction="#handleRunComparison" styleClass="btn-primary"/>
+                <Button fx:id="btnExport" text="💾  Export CSV"     onAction="#handleExportCSV"    styleClass="btn-secondary"/>
+            </HBox>
+
+            <HBox spacing="8" styleClass="control-row">
+                <Label text="Input Files:" styleClass="ctrl-label"/>
+                <ListView fx:id="fileListView" prefWidth="300" prefHeight="50"/>
+                <Button fx:id="btnAddFiles" text="Add Files..." onAction="#handleAddFiles" styleClass="btn-secondary"/>
+                <Button fx:id="btnClear"    text="Clear"        onAction="#handleClearFiles" styleClass="btn-secondary"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="resultsTable" styleClass="results-table" VBox.vgrow="ALWAYS">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="colAlgorithm"   text="Algorithm"     minWidth="100"/>
+                <TableColumn fx:id="colArraySize"    text="Array Size"    minWidth="80"/>
+                <TableColumn fx:id="colArrayType"    text="Array Type"    minWidth="100"/>
+                <TableColumn fx:id="colRuns"         text="Runs"          minWidth="50"/>
+                <TableColumn fx:id="colAvg"          text="Avg (ms)"      minWidth="80"/>
+                <TableColumn fx:id="colMin"          text="Min (ms)"      minWidth="80"/>
+                <TableColumn fx:id="colMax"          text="Max (ms)"      minWidth="80"/>
+                <TableColumn fx:id="colComparisons"  text="Comparisons"   minWidth="100"/>
+                <TableColumn fx:id="colInterchanges" text="Interchanges"  minWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <Label fx:id="lblStatus" text=" " styleClass="status-label"/>
+    </bottom>
+</BorderPane>

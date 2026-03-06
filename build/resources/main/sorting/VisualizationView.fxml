@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sorting.VisualizationController"
+            styleClass="tab-content">
+
+    <top>
+        <VBox styleClass="controls-box">
+            <HBox spacing="12" styleClass="control-row">
+                <Label text="Algorithm:" styleClass="ctrl-label"/>
+                <ComboBox fx:id="cmbAlgo" prefWidth="150"/>
+
+                <Label text="Array Type:" styleClass="ctrl-label"/>
+                <ComboBox fx:id="cmbType" prefWidth="150"/>
+
+                <Label text="Size (max 1000):" styleClass="ctrl-label"/>
+                <Spinner fx:id="spnSize" editable="true" prefWidth="80"/>
+
+                <Label text="Speed:" styleClass="ctrl-label"/>
+                <Slider fx:id="sldSpeed" prefWidth="130" showTickMarks="true" showTickLabels="true"
+                        majorTickUnit="100" minorTickCount="4"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <Button fx:id="btnLoad" text="Load / Reset" onAction="#handleLoad" styleClass="btn-secondary"/>
+                <Button fx:id="btnPlay" text="▶  Play"      onAction="#handlePlay" styleClass="btn-primary"/>
+                <Button fx:id="btnStep" text="Step"         onAction="#handleStep" styleClass="btn-secondary"/>
+                <Button fx:id="btnStop" text="■  Stop"      onAction="#handleStop" styleClass="btn-danger"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane>
+            <Canvas fx:id="vizCanvas"/>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <VBox styleClass="viz-footer">
+            <Label fx:id="lblProgress" text="Load an array to begin" styleClass="status-label"/>
+            <Label fx:id="lblStats"    text=""                       styleClass="stats-label"/>
+        </VBox>
+    </bottom>
+</BorderPane>

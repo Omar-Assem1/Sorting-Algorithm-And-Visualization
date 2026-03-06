@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sorting.MultiVisualizationController"
+            styleClass="tab-content">
+
+    <top>
+        <VBox styleClass="controls-box">
+            <HBox spacing="12" styleClass="control-row">
+                <Label text="Array Type:" styleClass="ctrl-label"/>
+                <ComboBox fx:id="cmbType" prefWidth="150"/>
+
+                <Label text="Size (max 1000):" styleClass="ctrl-label"/>
+                <Spinner fx:id="spnSize" editable="true" prefWidth="80"/>
+
+                <Label text="Speed:" styleClass="ctrl-label"/>
+                <Slider fx:id="sldSpeed" prefWidth="130" showTickMarks="true" showTickLabels="true"
+                        majorTickUnit="100" minorTickCount="4"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <Button fx:id="btnLoad" text="Load / Reset" onAction="#handleLoad" styleClass="btn-secondary"/>
+                <Button fx:id="btnPlay" text="▶  Play"      onAction="#handlePlay" styleClass="btn-primary"/>
+                <Button fx:id="btnStep" text="Step"         onAction="#handleStep" styleClass="btn-secondary"/>
+                <Button fx:id="btnStop" text="■  Stop"      onAction="#handleStop" styleClass="btn-danger"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <GridPane fx:id="canvasGrid" hgap="5" vgap="5" styleClass="canvas-grid">
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Canvas fx:id="canvas1"/>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Canvas fx:id="canvas2"/>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <Canvas fx:id="canvas3"/>
+            </StackPane>
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Canvas fx:id="canvas4"/>
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Canvas fx:id="canvas5"/>
+            </StackPane>
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Canvas fx:id="canvas6"/>
+            </StackPane>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="33.33" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="33.33" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="33.33" hgrow="ALWAYS"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="50" vgrow="ALWAYS"/>
+                <RowConstraints percentHeight="50" vgrow="ALWAYS"/>
+            </rowConstraints>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <VBox styleClass="viz-footer">
+            <Label fx:id="lblProgress" text="Load an array to begin" styleClass="status-label"/>
+        </VBox>
+    </bottom>
+</BorderPane>
